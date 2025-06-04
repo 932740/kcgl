@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 引入 Tailwind CSS（CDN 方式，也可替换为本地或其他样式库） -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>设备库存管理系统</title>
+  <style>
+    /* 自定义基础样式，可根据需求扩展 */
+    body {
+      background-color: #f9fafb;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <!-- 导航栏 -->
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+      <a href="/" class="text-xl font-bold text-gray-800">设备库存管理系统</a>
+      <div class="space-x-4">
+        <a href="/device/management"
+          class="text-gray-600 hover:text-gray-800 transition-colors">设备管理</a>
+        <a href="/stock/in" class="text-gray-600 hover:text-gray-800 transition-colors">入库操作</a>
+        <a href="/stock/out" class="text-gray-600 hover:text-gray-800 transition-colors">出库操作</a>
+        <a href="/report/history" class="text-gray-600 hover:text-gray-800 transition-colors">历史记录</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主内容区域 -->
+  <main class="container mx-auto flex-grow py-8">
+    <section class="bg-white rounded-lg shadow-md p-6">
+      <h2 class="text-2xl font-bold mb-4 text-gray-800">欢迎使用库存管理系统</h2>
+      <p class="text-gray-600 mb-6">
+        本系统帮助您高效管理设备库存，支持设备信息维护、出入库操作记录及历史数据查询，
+        助力您清晰掌握库存动态，提升工作效率。
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h3 class="text-lg font-semibold mb-2 text-gray-800">设备管理</h3>
+          <p class="text-gray-600">
+            新增、编辑、删除设备信息，维护设备基础数据，确保库存管理准确。
+          </p>
+          <a href="/device/management"
+            class="mt-2 inline-block text-blue-600 hover:underline">进入设备管理</a>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h3 class="text-lg font-semibold mb-2 text-gray-800">入库操作</h3>
+          <p class="text-gray-600">
+            记录设备入库信息，支持上传操作照片，留痕管理更规范。
+          </p>
+          <a href="/stock/in" class="mt-2 inline-block text-blue-600 hover:underline">进入入库操作</a>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h3 class="text-lg font-semibold mb-2 text-gray-800">出库操作</h3>
+          <p class="text-gray-600">
+            登记设备出库详情，校验库存数量，保障出库流程合规。
+          </p>
+          <a href="/stock/out" class="mt-2 inline-block text-blue-600 hover:underline">进入出库操作</a>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <h3 class="text-lg font-semibold mb-2 text-gray-800">历史记录</h3>
+          <p class="text-gray-600">
+            查询设备出入库历史，支持导出报表，便于数据分析与复盘。
+          </p>
+          <a href="/report/history" class="mt-2 inline-block text-blue-600 hover:underline">查看历史记录</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-white shadow-md mt-auto">
+    <div class="container mx-auto px-4 py-2 text-center text-gray-500 text-sm">
+      © 2025 设备库存管理系统 版权所有
+    </div>
+  </footer>
+</body>
+
+</html>

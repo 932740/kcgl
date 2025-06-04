@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>添加设备</title>
+</head>
+<body>
+    <h1>添加新设备</h1>
+    <!-- 显示后端通过 flash 传递的消息（如添加失败提示） -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!-- 表单提交路径需与后端路由匹配（/device/add） -->
+    <form method="POST" action="/device/add">
+        <div>
+            <label>设备名称：</label>
+            <input type="text" name="name" required>  <!-- 对应后端 name = request.form['name'] -->
+        </div>
+        <div>
+            <label>设备数量：</label>
+            <input type="number" name="quantity" min="0" required>  <!-- 对应后端 quantity = int(request.form['quantity']) -->
+        </div>
+        <div>
+            <label>计量单位：</label>
+            <input type="text" name="unit" required>  <!-- 对应后端 unit = request.form['unit'] -->
+        </div>
+        <button type="submit">提交添加</button>
+    </form>
+    <a href="{{ url_for('device.management') }}">返回设备管理</a>
+</body>
+</html>
